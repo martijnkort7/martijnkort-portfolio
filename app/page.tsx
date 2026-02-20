@@ -2,6 +2,7 @@ import ScrollReveal from "./components/ScrollReveal";
 import ExperienceTimeline from "./components/ExperienceTimeline";
 import SkillsGrid from "./components/SkillsGrid";
 import ProjectsGrid from "./components/ProjectsGrid";
+import ContactSection from "./components/ContactSection";
 
 export default function Home() {
   return (
@@ -64,19 +65,7 @@ export default function Home() {
         <h2 className="font-heading text-sm font-bold uppercase tracking-widest text-accent mb-8 lg:hidden">
           Contact
         </h2>
-        <ScrollReveal>
-          <div className="leading-relaxed">
-            <p className="text-slate-light">
-              Neem gerust contact met me op via{" "}
-              <a
-                href="mailto:martijn.kort@hotmail.com"
-                className="text-accent hover:underline underline-offset-4 transition-colors duration-200"
-              >
-                martijn.kort@hotmail.com
-              </a>
-            </p>
-          </div>
-        </ScrollReveal>
+        <ContactSection />
       </section>
     </>
   );
