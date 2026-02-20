@@ -48,15 +48,14 @@ export default function Home() {
               Bij Bol. leerde ik processen verbeteren en teams in beweging
               krijgen. Maar er miste iets: een gereedschapskist die net zo snel
               meedacht als ik. Die vond ik in AI. Niet als buzzword. Als
-              oplossing. Bij Watermelon hielp ik bedrijven datzelfde ontdekken,
-              en scherpte ik mijn kennis van AI en procesoptimalisatie verder aan.
+              oplossing.
             </p>
             <p>
               Nu werk ik als Process Owner bij ICM. Ik breng procesregie en
               leertrajecten samen, en zoek continu de plek waar technologie écht
               het verschil maakt. In mijn vrije tijd bouw ik met Claude Code.
               Soms om iets op te lossen, soms omdat ik wil weten hoe het werkt.
-              En soms gewoon omdat het leuk is.
+              En vaak gewoon omdat het leuk is.
             </p>
             <p>
               Wat daaruit komt, vind je onder Projecten.
