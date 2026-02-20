@@ -58,7 +58,14 @@ export default function Home() {
               En vaak gewoon omdat het leuk is.
             </p>
             <p>
-              Wat daaruit komt, vind je onder Projecten.
+              Wat daaruit komt, vind je onder{" "}
+              <a
+                href="#projects"
+                className="text-accent hover:underline underline-offset-4 transition-colors duration-200"
+              >
+                Projecten
+              </a>
+              .
             </p>
           </div>
         </ScrollReveal>
@@ -66,21 +73,25 @@ export default function Home() {
 
       <section id="experience" className="mb-24">
         <h2 className="font-heading text-sm font-bold uppercase tracking-widest text-accent mb-8 lg:hidden">
-          Experience
+          Ervaring
         </h2>
         <ExperienceTimeline />
       </section>
 
       <section id="projects" className="mb-24">
         <h2 className="font-heading text-sm font-bold uppercase tracking-widest text-accent mb-8 lg:hidden">
-          Projects
+          Projecten
         </h2>
+        <p className="mb-8 text-sm italic leading-relaxed text-slate">
+          Ik ben net begonnen met bouwen in het openbaar. Deze portfolio is mijn
+          eerste GitHub-repo. Meer projecten volgen.
+        </p>
         <ProjectsGrid />
       </section>
 
       <section id="skills" className="mb-24">
         <h2 className="font-heading text-sm font-bold uppercase tracking-widest text-accent mb-8 lg:hidden">
-          Skills
+          Vaardigheden
         </h2>
         <SkillsGrid />
       </section>

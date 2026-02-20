@@ -38,6 +38,9 @@ export default function RootLayout({
               {children}
             </main>
           </div>
+          <footer className="pb-8 pt-16 text-center text-xs text-slate/40">
+            Ontworpen &amp; gebouwd door Martijn Kort · Next.js &amp; Tailwind CSS
+          </footer>
         </div>
       </body>
     </html>

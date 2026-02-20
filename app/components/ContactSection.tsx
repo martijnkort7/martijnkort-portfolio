@@ -16,7 +16,8 @@ export default function ContactSection() {
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       >
-        Neem gerust contact op — ik sta altijd open voor een goed gesprek.
+        Benieuwd of ik iets voor je kan betekenen, of gewoon nieuwsgierig
+        geworden na het lezen? Stuur een mail. Ik reageer snel.
       </motion.p>
 
       <motion.a
@@ -27,7 +28,7 @@ export default function ContactSection() {
         transition={{ duration: 0.5, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
       >
         <Mail size={16} />
-        martijn.kort@hotmail.com
+        Stuur een mail
       </motion.a>
 
       <motion.div

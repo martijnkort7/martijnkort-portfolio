@@ -10,58 +10,55 @@ interface SkillGroup {
 
 const skillGroups: SkillGroup[] = [
   {
-    heading: "Proces",
+    heading: "Proces & Analyse",
     skills: [
       "Procesoptimalisatie",
       "BPMN & Procesanalyse",
       "Process Mining",
       "KPI-monitoring & Rapportage",
-      "Lean / Continuous Improvement",
+      "Lean / Continue Verbetering",
+      "Data-gedreven besluitvorming",
     ],
   },
   {
-    heading: "AI & Automatisering",
+    heading: "AI & Technologie",
     skills: [
       "AI & Automatisering",
       "AI Agents",
       "Prompt Engineering",
-      "Claude Code",
-      "Claude Cowork",
-      "Zapier",
       "Python",
-      "Data-gedreven besluitvorming",
+      "Zapier",
+      "HubSpot CRM",
+      "Claude Code",
     ],
   },
   {
     heading: "Mensen & Organisatie",
     skills: [
       "Teamcoördinatie",
-      "Communicatie & Stakeholdermanagement",
+      "Stakeholdermanagement",
       "Change Management",
+      "Communicatie",
     ],
   },
 ];
-
-const allSkills = skillGroups.flatMap((g) => g.skills);
 
 export default function SkillsGrid() {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: true, margin: "-40px 0px" });
 
-  // Track global index for stagger delay
   let globalIndex = 0;
 
   return (
-    <div ref={ref}>
-      {/* Mobile: grouped with headings */}
-      <div className="flex flex-col gap-6 lg:hidden">
-        {skillGroups.map((group) => (
-          <div key={group.heading} className="flex flex-col gap-3">
-            <h3 className="font-heading text-xs font-semibold uppercase tracking-widest text-slate-light">
-              {group.heading}
-            </h3>
+    <div ref={ref} className="flex flex-col gap-8">
+      {skillGroups.map((group) => (
+        <div key={group.heading}>
+          <h3 className="mb-3 font-heading text-xs font-semibold uppercase tracking-widest text-slate-light">
+            {group.heading}
+          </h3>
+          <div className="flex flex-col gap-3 lg:flex-row lg:flex-wrap">
             {group.skills.map((skill) => {
-              const i = allSkills.indexOf(skill);
+              const i = globalIndex++;
               return (
                 <motion.span
                   key={skill}
@@ -76,38 +73,15 @@ export default function SkillsGrid() {
                     delay: i * 0.06,
                     ease: [0.22, 1, 0.36, 1],
                   }}
-                  className="rounded-full bg-accent/10 px-4 py-1.5 text-center text-sm font-medium text-accent transition-all duration-300 hover:bg-accent/20 hover:shadow-[0_0_12px_rgba(100,255,218,0.15)] cursor-default"
+                  className="rounded-full bg-accent/10 px-4 py-1.5 text-center text-sm font-medium text-accent transition-all duration-300 hover:bg-accent/20 hover:shadow-[0_0_12px_rgba(100,255,218,0.15)] cursor-default lg:text-left"
                 >
                   {skill}
                 </motion.span>
               );
             })}
           </div>
-        ))}
-      </div>
-
-      {/* Desktop: flat flex-wrap, no headings */}
-      <div className="hidden lg:flex lg:flex-wrap lg:gap-3">
-        {allSkills.map((skill, i) => (
-          <motion.span
-            key={skill}
-            initial={{ opacity: 0, scale: 0.85 }}
-            animate={
-              isInView
-                ? { opacity: 1, scale: 1 }
-                : { opacity: 0, scale: 0.85 }
-            }
-            transition={{
-              duration: 0.4,
-              delay: i * 0.06,
-              ease: [0.22, 1, 0.36, 1],
-            }}
-            className="rounded-full bg-accent/10 px-4 py-1.5 text-sm font-medium text-accent transition-all duration-300 hover:bg-accent/20 hover:shadow-[0_0_12px_rgba(100,255,218,0.15)] cursor-default"
-          >
-            {skill}
-          </motion.span>
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
   );
 }

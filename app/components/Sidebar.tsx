@@ -6,9 +6,9 @@ import { Github, Linkedin, Mail } from "lucide-react";
 
 const navItems = [
   { label: "Over mij", href: "#about" },
-  { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
-  { label: "Skills", href: "#skills" },
+  { label: "Ervaring", href: "#experience" },
+  { label: "Projecten", href: "#projects" },
+  { label: "Vaardigheden", href: "#skills" },
   { label: "Contact", href: "#contact" },
 ];
 
