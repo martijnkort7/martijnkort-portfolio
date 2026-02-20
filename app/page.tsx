@@ -10,31 +10,56 @@ export default function Home() {
       <section id="about" className="mb-24">
         {/* Hero heading — visible on mobile only, sidebar handles desktop */}
         <ScrollReveal>
-          <div className="mb-8 lg:hidden">
+          <div className="mb-10 lg:hidden">
             <h1 className="font-heading text-4xl font-bold tracking-tight text-lightest sm:text-5xl">
               Martijn Kort
             </h1>
             <p className="mt-3 font-heading text-lg font-medium text-slate-light">
-              Process Owner | AI &amp; Automatisering
+              Process Owner · AI-specialist · Utrecht
             </p>
           </div>
         </ScrollReveal>
 
+        {/* Hero statement — always visible, first thing to read */}
+        <ScrollReveal delay={0.1}>
+          <blockquote className="mb-10 space-y-2">
+            <p className="font-heading text-2xl font-semibold leading-snug tracking-tight text-lightest sm:text-3xl">
+              De meeste mensen zijn óf goed in processen, óf in technologie.
+            </p>
+            <p className="font-heading text-2xl font-semibold leading-snug tracking-tight text-accent italic sm:text-3xl">
+              Ik weiger te kiezen.
+            </p>
+          </blockquote>
+        </ScrollReveal>
+
         {/* Section label — mobile only */}
         <h2 className="font-heading text-sm font-bold uppercase tracking-widest text-accent mb-8 lg:hidden">
-          About
+          Over mij
         </h2>
 
         {/* About intro text — always visible */}
-        <ScrollReveal delay={0.15}>
+        <ScrollReveal delay={0.2}>
           <div className="space-y-4 leading-relaxed">
-            <p className="text-lightest text-lg">
-              HBO-professional gespecialiseerd in procesoptimalisatie, AI en
-              automatisering.
+            <p>
+              Waar anderen al jaren een workaround accepteren, zie ik processen
+              die vastlopen. Dat accepteren is me nooit gelukt.
             </p>
             <p>
-              Empathisch, analytisch, sterk in het vertalen van knelpunten naar
-              concrete oplossingen. Momenteel werkzaam bij ICM in Utrecht.
+              Bij Bol. leerde ik processen verbeteren en teams in beweging
+              krijgen. Maar er miste iets: een gereedschapskist die net zo snel
+              meedacht als ik. Die vond ik in AI. Niet als buzzword. Als
+              oplossing. Bij Watermelon hielp ik bedrijven datzelfde ontdekken,
+              en scherpte ik mijn kennis van AI en procesoptimalisatie verder aan.
+            </p>
+            <p>
+              Nu werk ik als Process Owner bij ICM. Ik breng procesregie en
+              leertrajecten samen, en zoek continu de plek waar technologie écht
+              het verschil maakt. In mijn vrije tijd bouw ik met Claude Code.
+              Soms om iets op te lossen, soms omdat ik wil weten hoe het werkt.
+              En soms gewoon omdat het leuk is.
+            </p>
+            <p>
+              Wat daaruit komt, vind je onder Projecten.
             </p>
           </div>
         </ScrollReveal>

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { Github, Linkedin, Mail } from "lucide-react";
 
 const navItems = [
-  { label: "About", href: "#about" },
+  { label: "Over mij", href: "#about" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
@@ -18,23 +18,36 @@ export default function Sidebar() {
   const [activeSection, setActiveSection] = useState<string>("about");
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
+    const handleScroll = () => {
+      // If at the bottom of the page, activate the last section
+      const atBottom =
+        window.innerHeight + window.scrollY >= document.body.scrollHeight - 50;
+      if (atBottom) {
+        setActiveSection(sectionIds[sectionIds.length - 1]);
+        return;
+      }
+
+      // Find the section closest to the top of the viewport
+      const offset = window.innerHeight * 0.3;
+      let current = sectionIds[0];
+
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (el) {
+          const top = el.getBoundingClientRect().top;
+          if (top <= offset) {
+            current = id;
           }
         }
-      },
-      { rootMargin: "-20% 0px -60% 0px", threshold: 0 }
-    );
+      }
 
-    for (const id of sectionIds) {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    }
+      setActiveSection(current);
+    };
 
-    return () => observer.disconnect();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -53,12 +66,9 @@ export default function Sidebar() {
         <h1 className="font-heading text-5xl font-bold tracking-tight text-lightest">
           Martijn Kort
         </h1>
-        <h2 className="mt-3 font-heading text-xl font-medium text-slate-light">
-          Process Owner & AI-automatisering specialist
+        <h2 className="mt-3 font-heading text-lg font-medium text-slate-light">
+          Process Owner · AI-specialist · Utrecht
         </h2>
-        <p className="mt-4 max-w-xs text-slate leading-relaxed">
-          Ik bouw slimmere processen en automatiseer workflows met AI.
-        </p>
 
         <nav className="mt-16" aria-label="Navigatie">
           <ul className="flex flex-col gap-1">
