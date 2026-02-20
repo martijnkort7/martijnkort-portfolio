@@ -2,7 +2,7 @@
 @plugin "@tailwindcss/typography";
 
 @theme inline {
-  --color-navy: #0a192f;
+  --color-navy: #07111f;
   --color-navy-light: #112240;
   --color-navy-lighter: #1d3461;
   --color-slate: #8892b0;
