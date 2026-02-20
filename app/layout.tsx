@@ -3,6 +3,7 @@ import { Space_Grotesk, DM_Sans } from "next/font/google";
 import Sidebar from "./components/Sidebar";
 import MobileNav from "./components/MobileNav";
 import ScrollToTop from "./components/ScrollToTop";
+import SpotlightCursor from "./components/SpotlightCursor";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -59,6 +60,7 @@ export default function RootLayout({
   return (
     <html lang="nl" className={`${spaceGrotesk.variable} ${dmSans.variable}`}>
       <body className="antialiased">
+        <SpotlightCursor />
         <div className="mx-auto max-w-screen-xl px-6 md:px-12 lg:px-24">
           <div className="lg:flex lg:gap-4">
             <Sidebar />

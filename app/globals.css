@@ -35,19 +35,6 @@
     background-size: 256px 256px;
   }
 
-  /* Radial gradient spotlight that follows the viewport */
-  body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    background: radial-gradient(
-      ellipse 600px 600px at 20% 10%,
-      rgba(100, 255, 218, 0.035),
-      transparent 70%
-    );
-  }
 
   /* Ensure content is above overlays */
   body > * {
