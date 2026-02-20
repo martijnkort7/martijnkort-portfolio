@@ -13,7 +13,7 @@ interface Experience {
 
 const experiences: Experience[] = [
   {
-    period: "2025 — heden",
+    period: "mrt 2026 — heden",
     role: "Process Owner Maatwerk",
     company: "ICM",
     location: "Utrecht",
@@ -24,7 +24,7 @@ const experiences: Experience[] = [
     ],
   },
   {
-    period: "feb 2025 — heden",
+    period: "feb 2025 — feb 2026",
     role: "Account Executive",
     company: "Watermelon",
     location: "Utrecht",
