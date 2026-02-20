@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Space_Grotesk, DM_Sans } from "next/font/google";
 import Sidebar from "./components/Sidebar";
 import MobileNav from "./components/MobileNav";
+import ScrollToTop from "./components/ScrollToTop";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -19,7 +20,35 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "Martijn Kort — Process Owner & AI-automatisering",
   description:
-    "Portfolio van Martijn Kort. Process Owner en AI-automatisering specialist uit Utrecht.",
+    "Portfolio van Martijn Kort. Process Owner en AI-automatisering specialist uit Utrecht. Gespecialiseerd in procesoptimalisatie, AI en automatisering.",
+  metadataBase: new URL("https://martijnkort.nl"),
+  openGraph: {
+    title: "Martijn Kort — Process Owner & AI-automatisering",
+    description:
+      "Process Owner en AI-automatisering specialist uit Utrecht. Gespecialiseerd in procesoptimalisatie, AI en automatisering.",
+    url: "https://martijnkort.nl",
+    siteName: "Martijn Kort",
+    locale: "nl_NL",
+    type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Martijn Kort — Process Owner & AI-automatisering",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Martijn Kort — Process Owner & AI-automatisering",
+    description:
+      "Process Owner en AI-automatisering specialist uit Utrecht.",
+    images: ["/og-image.png"],
+  },
+  icons: {
+    icon: "/icon.svg",
+  },
 };
 
 export default function RootLayout({
@@ -42,6 +71,7 @@ export default function RootLayout({
             Ontworpen &amp; gebouwd door Martijn Kort · Next.js &amp; Tailwind CSS
           </footer>
         </div>
+        <ScrollToTop />
       </body>
     </html>
   );

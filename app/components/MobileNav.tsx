@@ -8,7 +8,6 @@ const navItems = [
   { label: "Over mij", href: "#about" },
   { label: "Ervaring", href: "#experience" },
   { label: "Projecten", href: "#projects" },
-  { label: "Vaardigheden", href: "#skills" },
   { label: "Contact", href: "#contact" },
 ];
 

@@ -1,6 +1,5 @@
 import ScrollReveal from "./components/ScrollReveal";
 import ExperienceTimeline from "./components/ExperienceTimeline";
-import SkillsGrid from "./components/SkillsGrid";
 import ProjectsGrid from "./components/ProjectsGrid";
 import ContactSection from "./components/ContactSection";
 
@@ -89,14 +88,7 @@ export default function Home() {
         <ProjectsGrid />
       </section>
 
-      <section id="skills" className="mb-24">
-        <h2 className="font-heading text-sm font-bold uppercase tracking-widest text-accent mb-8 lg:hidden">
-          Vaardigheden
-        </h2>
-        <SkillsGrid />
-      </section>
-
-      <section id="contact" className="mb-24">
+<section id="contact" className="mb-24">
         <h2 className="font-heading text-sm font-bold uppercase tracking-widest text-accent mb-8 lg:hidden">
           Contact
         </h2>
