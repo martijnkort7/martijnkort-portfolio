@@ -1,0 +1,19 @@
+[
+  {
+    "name": "martijnkort-portfolio",
+    "description": "Personal portfolio website showcasing my projects and skills. Built with Claude Code.",
+    "readme_summary": "Personal portfolio website showcasing my projects and skills. Built with Claude Code.",
+    "url": "https://github.com/martijnkort7/martijnkort-portfolio",
+    "language": "TypeScript",
+    "languages": [
+      "TypeScript",
+      "CSS",
+      "JavaScript"
+    ],
+    "topics": [],
+    "stars": 0,
+    "updated_at": "2026-02-20T15:03:04Z",
+    "pushed_at": "2026-02-20T15:03:01Z",
+    "recently_active": true
+  }
+]
