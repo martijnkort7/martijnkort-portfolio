@@ -44,7 +44,7 @@ export default function ProjectCard({
               href={project.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="shrink-0 text-slate transition-colors duration-200 hover:text-accent"
+              className="shrink-0 text-slate transition-colors duration-300 hover:text-accent"
               aria-label={`GitHub repository van ${project.title}`}
             >
               <Github size={18} />

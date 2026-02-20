@@ -86,7 +86,7 @@ function ExperienceCard({
         href={experience.url}
         target="_blank"
         rel="noopener noreferrer"
-        className="group grid grid-cols-[1fr] sm:grid-cols-[140px_1fr] gap-1 sm:gap-6 rounded-lg p-4 -mx-4 no-underline cursor-pointer transition-all duration-300 hover:bg-navy-light/50 hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.05)] hover:drop-shadow-lg"
+        className="group grid grid-cols-[1fr] sm:grid-cols-[140px_1fr] gap-2 sm:gap-6 rounded-lg p-4 -mx-4 no-underline transition-all duration-300 hover:bg-navy-light/50 hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.05)] hover:drop-shadow-lg"
         aria-label={`${experience.role} bij ${experience.company}`}
       >
         {/* Period */}

@@ -45,7 +45,7 @@ export default function MobileNav() {
         </span>
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="text-slate-light transition-colors duration-200 hover:text-accent"
+          className="text-slate-light transition-colors duration-300 hover:text-accent"
           aria-label={isOpen ? "Menu sluiten" : "Menu openen"}
           aria-expanded={isOpen}
         >
@@ -80,7 +80,7 @@ export default function MobileNav() {
                     <a
                       href={item.href}
                       onClick={(e) => handleClick(e, item.href)}
-                      className="font-heading text-2xl font-semibold text-lightest transition-colors duration-200 hover:text-accent"
+                      className="font-heading text-2xl font-semibold text-lightest transition-colors duration-300 hover:text-accent"
                     >
                       {item.label}
                     </a>

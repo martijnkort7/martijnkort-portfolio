@@ -60,7 +60,7 @@ export default function Home() {
               Wat daaruit komt, vind je onder{" "}
               <a
                 href="#projects"
-                className="text-accent hover:underline underline-offset-4 transition-colors duration-200"
+                className="text-accent hover:underline underline-offset-4 transition-colors duration-300"
               >
                 Projecten
               </a>

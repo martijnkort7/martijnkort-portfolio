@@ -41,7 +41,7 @@ export default function ContactSection() {
           href="https://linkedin.com/in/martijnkort07"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-slate transition-colors duration-200 hover:text-accent"
+          className="text-slate transition-colors duration-300 hover:text-accent"
           aria-label="LinkedIn"
         >
           <Linkedin size={22} />
@@ -50,7 +50,7 @@ export default function ContactSection() {
           href="https://github.com/martijnkort7"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-slate transition-colors duration-200 hover:text-accent"
+          className="text-slate transition-colors duration-300 hover:text-accent"
           aria-label="GitHub"
         >
           <Github size={22} />

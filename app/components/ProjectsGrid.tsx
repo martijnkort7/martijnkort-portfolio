@@ -72,7 +72,7 @@ export default function ProjectsGrid() {
           href="https://github.com/martijnkort7"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 font-heading text-sm font-medium text-slate-light transition-colors duration-200 hover:text-accent"
+          className="inline-flex items-center gap-2 font-heading text-sm font-medium text-slate-light transition-colors duration-300 hover:text-accent"
         >
           Bekijk alle projecten op GitHub
           <ExternalLink size={14} />
