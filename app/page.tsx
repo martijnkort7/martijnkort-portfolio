@@ -1,12 +1,30 @@
+"use client";
+
+import { useState } from "react";
 import ScrollReveal from "./components/ScrollReveal";
 import TypewriterText from "./components/TypewriterText";
 import ExperienceTimeline from "./components/ExperienceTimeline";
 import ProjectsGrid from "./components/ProjectsGrid";
 import ContactSection from "./components/ContactSection";
+import ParticleBackground from "./components/ParticleBackground";
+import ParticleToggle from "./components/ParticleToggle";
 
 export default function Home() {
+  const [particlesOn, setParticlesOn] = useState(false);
+  const [toggleAppeared, setToggleAppeared] = useState(false);
+
+  const handleTypewriterComplete = () => {
+    setToggleAppeared(true);
+  };
+
   return (
     <>
+      <ParticleBackground isVisible={particlesOn} />
+      <ParticleToggle
+        isVisible={particlesOn}
+        onToggle={() => setParticlesOn(!particlesOn)}
+        hasAppeared={toggleAppeared}
+      />
       <section id="about" className="mb-24">
         {/* Hero heading — visible on mobile only, sidebar handles desktop */}
         <ScrollReveal>
@@ -32,6 +50,7 @@ export default function Home() {
                 delay={1250}
                 speed={120}
                 className="text-[#64ffda] italic"
+                onComplete={handleTypewriterComplete}
               />
             </p>
           </blockquote>

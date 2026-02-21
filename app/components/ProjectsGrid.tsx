@@ -1,7 +1,6 @@
-import { readFileSync } from "fs";
-import { join } from "path";
 import ProjectCard, { type Project } from "./ProjectCard";
 import { ExternalLink } from "lucide-react";
+import reposJson from "../data/repos.json";
 
 interface RepoData {
   name: string;
@@ -29,21 +28,15 @@ function repoToProject(repo: RepoData): Project {
 }
 
 function loadRepos(): Project[] {
-  try {
-    const filePath = join(process.cwd(), "app", "data", "repos.json");
-    const raw = readFileSync(filePath, "utf-8");
-    const repos: RepoData[] = JSON.parse(raw);
+  const repos: RepoData[] = reposJson;
 
-    return repos
-      .sort(
-        (a, b) =>
-          new Date(b.pushed_at).getTime() - new Date(a.pushed_at).getTime()
-      )
-      .slice(0, 6)
-      .map(repoToProject);
-  } catch {
-    return [];
-  }
+  return repos
+    .sort(
+      (a, b) =>
+        new Date(b.pushed_at).getTime() - new Date(a.pushed_at).getTime()
+    )
+    .slice(0, 6)
+    .map(repoToProject);
 }
 
 export default function ProjectsGrid() {

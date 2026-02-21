@@ -9,8 +9,8 @@ import { useEffect, useRef, useState } from "react";
 const PARTICLE_COUNT = 65;
 const MAX_SPEED = 0.4;
 const CONNECT_DISTANCE = 120;
-const MOUSE_DISTANCE = 150;
-const MOUSE_ATTRACT = 0.05;
+const MOUSE_DISTANCE = 100;
+const MOUSE_ATTRACT = 0.015;
 const PARTICLE_RADIUS = 1.5;
 const PARTICLE_COLOR = "100, 255, 218";
 
@@ -23,7 +23,11 @@ interface Particle {
 
 const BREAKPOINT = 768;
 
-export default function ParticleBackground() {
+interface ParticleBackgroundProps {
+  isVisible?: boolean;
+}
+
+export default function ParticleBackground({ isVisible = true }: ParticleBackgroundProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [enabled, setEnabled] = useState(false);
 
@@ -38,14 +42,19 @@ export default function ParticleBackground() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  useEffect(() => {
-    if (!enabled) return;
+  const active = enabled && isVisible;
 
+  useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
+
+    if (!active) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      return;
+    }
 
     let animationId: number;
     const mouse = { x: -9999, y: -9999 };
@@ -153,7 +162,7 @@ export default function ParticleBackground() {
       window.removeEventListener("mousemove", handleMouseMove);
       cancelAnimationFrame(animationId);
     };
-  }, [enabled]);
+  }, [active]);
 
   if (!enabled) return null;
 
