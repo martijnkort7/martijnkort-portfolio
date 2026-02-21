@@ -18,7 +18,7 @@ interface TypewriterTextProps {
 function useTypewriter(text: string, speed: number, delay: number) {
   const [displayedText, setDisplayedText] = useState("");
   const [isDone, setIsDone] = useState(false);
-  const timeoutRef = useRef<ReturnType<typeof setTimeout>>();
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     setDisplayedText("");
