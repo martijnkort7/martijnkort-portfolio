@@ -4,7 +4,7 @@
  */
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const PARTICLE_COUNT = 65;
 const MAX_SPEED = 0.4;
@@ -21,10 +21,26 @@ interface Particle {
   vy: number;
 }
 
+const BREAKPOINT = 768;
+
 export default function ParticleBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [enabled, setEnabled] = useState(false);
 
   useEffect(() => {
+    setEnabled(window.innerWidth >= BREAKPOINT);
+
+    function handleResize() {
+      setEnabled(window.innerWidth >= BREAKPOINT);
+    }
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (!enabled) return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
 
@@ -137,7 +153,9 @@ export default function ParticleBackground() {
       window.removeEventListener("mousemove", handleMouseMove);
       cancelAnimationFrame(animationId);
     };
-  }, []);
+  }, [enabled]);
+
+  if (!enabled) return null;
 
   return (
     <canvas
