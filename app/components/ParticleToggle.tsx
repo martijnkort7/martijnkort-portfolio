@@ -35,7 +35,7 @@ export default function ParticleToggle({ isVisible, onToggle, hasAppeared }: Par
   }, [isVisible, hasAppeared]);
 
   return (
-    <div className="fixed top-6 right-6 z-50" style={{ overflow: "visible" }}>
+    <div className="hidden md:block fixed top-6 right-6 z-50" style={{ overflow: "visible" }}>
       <style dangerouslySetInnerHTML={{ __html: `
         @keyframes particle1 { 0% { transform: translate(0, 0); opacity: 0.6; } 100% { transform: translate(-40px, -50px); opacity: 0; } }
         @keyframes particle2 { 0% { transform: translate(0, 0); opacity: 0.6; } 100% { transform: translate(40px, -45px); opacity: 0; } }
