@@ -1,4 +1,5 @@
 import ScrollReveal from "./components/ScrollReveal";
+import TypewriterText from "./components/TypewriterText";
 import ExperienceTimeline from "./components/ExperienceTimeline";
 import ProjectsGrid from "./components/ProjectsGrid";
 import ContactSection from "./components/ContactSection";
@@ -25,8 +26,13 @@ export default function Home() {
             <p className="font-heading text-2xl font-semibold leading-snug tracking-tight text-lightest sm:text-3xl">
               De meeste mensen zijn óf goed in processen, óf in technologie.
             </p>
-            <p className="font-heading text-2xl font-semibold leading-snug tracking-tight text-accent italic sm:text-3xl">
-              Ik weiger te kiezen.
+            <p className="font-heading text-2xl font-semibold leading-snug tracking-tight sm:text-3xl">
+              <TypewriterText
+                text="Ik weiger te kiezen."
+                delay={1250}
+                speed={120}
+                className="text-[#64ffda] italic"
+              />
             </p>
           </blockquote>
         </ScrollReveal>
