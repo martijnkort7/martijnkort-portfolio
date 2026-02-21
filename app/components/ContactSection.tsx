@@ -3,6 +3,7 @@
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { Mail, Linkedin, Github } from "lucide-react";
+import MagneticButton from "./MagneticButton";
 
 export default function ContactSection() {
   const ref = useRef<HTMLDivElement>(null);
@@ -20,16 +21,18 @@ export default function ContactSection() {
         geworden na het lezen? Stuur een mail. Ik reageer snel.
       </motion.p>
 
-      <motion.a
-        href="mailto:martijn.kort@hotmail.com"
-        className="mt-8 inline-flex items-center gap-2.5 rounded-lg border border-accent px-8 py-3 font-heading text-sm font-semibold text-accent transition-all duration-300 hover:bg-accent/10 hover:shadow-[0_0_20px_rgba(100,255,218,0.1)]"
-        initial={{ opacity: 0, y: 20 }}
-        animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-        transition={{ duration: 0.5, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-      >
-        <Mail size={16} />
-        Stuur een mail
-      </motion.a>
+      <MagneticButton>
+        <motion.a
+          href="mailto:martijn.kort@hotmail.com"
+          className="mt-8 inline-flex items-center gap-2.5 rounded-lg border border-accent px-8 py-3 font-heading text-sm font-semibold text-accent transition-all duration-300 hover:bg-accent/10 hover:shadow-[0_0_20px_rgba(100,255,218,0.1)]"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.5, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <Mail size={16} />
+          Stuur een mail
+        </motion.a>
+      </MagneticButton>
 
       <motion.div
         className="mt-10 flex items-center gap-6"
