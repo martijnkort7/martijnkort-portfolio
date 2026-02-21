@@ -1,7 +1,3 @@
-"use client";
-
-import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 
 interface Experience {
@@ -61,68 +57,48 @@ const experiences: Experience[] = [
   },
 ];
 
-function ExperienceCard({
-  experience,
-  index,
-}: {
-  experience: Experience;
-  index: number;
-}) {
-  const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-40px 0px" });
-
+function ExperienceCard({ experience }: { experience: Experience }) {
   return (
-    <motion.div
-      ref={ref}
-      initial={{ opacity: 0, y: 30 }}
-      animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-      transition={{
-        duration: 0.5,
-        delay: index * 0.1,
-        ease: [0.22, 1, 0.36, 1],
-      }}
+    <a
+      href={experience.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group grid grid-cols-[1fr] sm:grid-cols-[140px_1fr] gap-2 sm:gap-6 rounded-lg p-4 -mx-4 no-underline transition-all duration-300 hover:bg-navy-light/50 hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.05)] hover:drop-shadow-lg"
+      aria-label={`${experience.role} bij ${experience.company}`}
     >
-      <a
-        href={experience.url}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="group grid grid-cols-[1fr] sm:grid-cols-[140px_1fr] gap-2 sm:gap-6 rounded-lg p-4 -mx-4 no-underline transition-all duration-300 hover:bg-navy-light/50 hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.05)] hover:drop-shadow-lg"
-        aria-label={`${experience.role} bij ${experience.company}`}
-      >
-        {/* Period */}
-        <p className="text-xs font-semibold uppercase tracking-wide text-slate sm:pt-1">
-          {experience.period}
+      {/* Period */}
+      <p className="text-xs font-semibold uppercase tracking-wide text-slate sm:pt-1">
+        {experience.period}
+      </p>
+
+      {/* Details */}
+      <div>
+        <h3 className="font-heading text-base font-semibold leading-snug text-lightest group-hover:text-accent transition-colors duration-300">
+          {experience.role}
+          <span className="text-accent"> · </span>
+          <span className="inline-flex items-center gap-1 font-medium">
+            {experience.company}
+            <ExternalLink
+              size={12}
+              className="inline-block opacity-0 -translate-y-px transition-opacity duration-300 group-hover:opacity-100"
+            />
+          </span>
+        </h3>
+        <p className="mt-1 text-xs text-slate">{experience.location}</p>
+
+        <p className="mt-3 text-sm leading-relaxed text-slate-light">
+          {experience.description}
         </p>
-
-        {/* Details */}
-        <div>
-          <h3 className="font-heading text-base font-semibold leading-snug text-lightest group-hover:text-accent transition-colors duration-300">
-            {experience.role}
-            <span className="text-accent"> · </span>
-            <span className="inline-flex items-center gap-1 font-medium">
-              {experience.company}
-              <ExternalLink
-                size={12}
-                className="inline-block opacity-0 -translate-y-px transition-opacity duration-300 group-hover:opacity-100"
-              />
-            </span>
-          </h3>
-          <p className="mt-1 text-xs text-slate">{experience.location}</p>
-
-          <p className="mt-3 text-sm leading-relaxed text-slate-light">
-            {experience.description}
-          </p>
-        </div>
-      </a>
-    </motion.div>
+      </div>
+    </a>
   );
 }
 
 export default function ExperienceTimeline() {
   return (
     <div className="flex flex-col gap-2">
-      {experiences.map((exp, i) => (
-        <ExperienceCard key={`${exp.company}-${exp.role}`} experience={exp} index={i} />
+      {experiences.map((exp) => (
+        <ExperienceCard key={`${exp.company}-${exp.role}`} experience={exp} />
       ))}
     </div>
   );
