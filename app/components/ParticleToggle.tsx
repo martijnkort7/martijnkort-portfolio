@@ -69,29 +69,31 @@ export default function ParticleToggle({ isVisible, onToggle, hasAppeared }: Par
 
       <button
         onClick={onToggle}
-        className="relative inline-flex items-center gap-1.5"
+        className="relative inline-flex items-center gap-2"
         style={{
-          fontSize: 11,
-          padding: "6px 12px",
+          fontSize: 13,
+          padding: "8px 16px",
           borderRadius: 999,
-          border: `1px solid rgba(100, 255, 218, ${isVisible ? 1 : 0.3})`,
-          color: `rgba(100, 255, 218, ${isVisible ? 1 : 0.5})`,
-          background: "transparent",
-          boxShadow: isVisible ? "0 0 10px rgba(100, 255, 218, 0.31)" : "none",
-          opacity: hasAppeared ? (isVisible ? 1 : 0.5) : 0,
+          border: `1px solid rgba(100, 255, 218, ${isVisible ? 1 : 0.4})`,
+          color: `rgba(100, 255, 218, ${isVisible ? 1 : 0.7})`,
+          background: isVisible ? "rgba(100, 255, 218, 0.08)" : "rgba(100, 255, 218, 0.04)",
+          boxShadow: isVisible ? "0 0 14px rgba(100, 255, 218, 0.35)" : "none",
+          opacity: hasAppeared ? (isVisible ? 1 : 0.7) : 0,
           pointerEvents: hasAppeared ? "auto" : "none",
           transition: "all 0.8s ease",
           cursor: "pointer",
         }}
         onMouseEnter={(e) => {
           e.currentTarget.style.opacity = "1";
+          e.currentTarget.style.background = "rgba(100, 255, 218, 0.1)";
         }}
         onMouseLeave={(e) => {
-          e.currentTarget.style.opacity = "0.5";
+          e.currentTarget.style.opacity = isVisible ? "1" : "0.7";
+          e.currentTarget.style.background = isVisible ? "rgba(100, 255, 218, 0.08)" : "rgba(100, 255, 218, 0.04)";
         }}
         aria-label={isVisible ? "Particles uitschakelen" : "Particles inschakelen"}
       >
-        <Sparkles size={12} />
+        <Sparkles size={15} />
         {isVisible ? "stop particles" : "particles"}
       </button>
     </div>
