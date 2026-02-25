@@ -94,7 +94,7 @@ export default function ParticleToggle({ isVisible, onToggle, hasAppeared }: Par
         aria-label={isVisible ? "Particles uitschakelen" : "Particles inschakelen"}
       >
         <Sparkles size={15} />
-        {isVisible ? "stop particles" : "particles"}
+        {isVisible ? "stop particles" : "klik niet hier"}
       </button>
     </div>
   );
